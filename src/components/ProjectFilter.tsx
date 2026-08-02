@@ -41,7 +41,7 @@ export default function ProjectFilter({ repos }: { repos: Repo[] }) {
             type="text"
             aria-label="Search projects"
             placeholder="Search projects..."
-            className="bg-white/5 border border-white/10 rounded-xl p-4 text-white flex-grow focus:outline-none focus:border-blue-500 transition-colors"
+            className="bg-ink/5 border border-ink/10 rounded-xl p-4 text-ink flex-grow focus:outline-none focus:border-blue-600 dark:focus:border-blue-500 transition-colors"
             onChange={(e) => {
               setSearch(e.target.value);
               setCurrentPage(1);
@@ -50,7 +50,7 @@ export default function ProjectFilter({ repos }: { repos: Repo[] }) {
           {/* Ensure dropdown has a consistent width or flex-basis */}
           <select
             aria-label="Filter by language"
-            className="bg-slate-900 border border-white/10 rounded-xl p-4 text-white md:w-58 focus:outline-none focus:border-blue-500"
+            className="bg-white dark:bg-slate-900 border border-ink/10 rounded-xl p-4 text-ink md:w-58 focus:outline-none focus:border-blue-600 dark:focus:border-blue-500"
             onChange={(e) => {
               setLanguage(e.target.value);
               setCurrentPage(1);
@@ -64,7 +64,7 @@ export default function ProjectFilter({ repos }: { repos: Repo[] }) {
       </div>
 
       {currentProjects.length === 0 ? (
-        <p className="text-center text-white/50 py-16">
+        <p className="text-center text-ink/50 py-16">
           {repos.length === 0
             ? "No projects to show right now — check back soon."
             : "No projects match your search."}
@@ -85,17 +85,17 @@ export default function ProjectFilter({ repos }: { repos: Repo[] }) {
           <button
             disabled={currentPage === 1}
             onClick={() => setCurrentPage((p) => p - 1)}
-            className="px-6 py-2 bg-white/5 border border-white/10 rounded-full text-white hover:bg-white/10 disabled:opacity-30 transition-all"
+            className="px-6 py-2 bg-ink/5 border border-ink/10 rounded-full text-ink hover:bg-ink/10 disabled:opacity-30 transition-all"
           >
             Previous
           </button>
-          <span className="text-white/40 text-sm">
+          <span className="text-ink/40 text-sm">
             Page {currentPage} of {totalPages}
           </span>
           <button
             disabled={currentPage === totalPages}
             onClick={() => setCurrentPage((p) => p + 1)}
-            className="px-6 py-2 bg-white/5 border border-white/10 rounded-full text-white hover:bg-white/10 disabled:opacity-30 transition-all"
+            className="px-6 py-2 bg-ink/5 border border-ink/10 rounded-full text-ink hover:bg-ink/10 disabled:opacity-30 transition-all"
           >
             Next
           </button>

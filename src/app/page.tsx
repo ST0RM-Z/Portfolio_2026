@@ -14,14 +14,14 @@ export default async function Home() {
   return (
     <>
       <Nav />
-      <main className="min-h-screen bg-slate-950 px-6 py-16">
+      <main className="min-h-screen bg-background px-6 py-16">
         <div className="max-w-5xl mx-auto">
           <Hero />
           <About />
           <Skills />
           <Experience />
           <section id="projects" className="scroll-mt-20">
-            <h2 className="text-3xl font-bold text-white text-center mb-12">Projects</h2>
+            <h2 className="text-3xl font-bold text-ink text-center mb-12">Projects</h2>
             <ProjectFilter repos={repos} />
           </section>
           <Contact />

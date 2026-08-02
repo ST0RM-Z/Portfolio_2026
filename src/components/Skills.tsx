@@ -62,18 +62,18 @@ const SKILL_GROUPS: { label: string; items: Skill[] }[] = [
 export default function Skills() {
   return (
     <section id="skills" className="py-20 scroll-mt-20">
-      <h2 className="text-3xl font-bold text-white text-center mb-2">Skills</h2>
-      <p className="text-center text-white/40 text-sm mb-10">
-        <span className="inline-block w-2 h-2 rounded-full bg-blue-400 mr-2 align-middle" />
+      <h2 className="text-3xl font-bold text-ink text-center mb-2">Skills</h2>
+      <p className="text-center text-ink/40 text-sm mb-10">
+        <span className="inline-block w-2 h-2 rounded-full bg-blue-600 dark:bg-blue-400 mr-2 align-middle" />
         Demonstrated in my repos — the rest is from coursework and professional experience
       </p>
       <div className="max-w-4xl mx-auto grid grid-cols-1 sm:grid-cols-2 gap-6">
         {SKILL_GROUPS.map((group) => (
           <div
             key={group.label}
-            className="border border-white/10 rounded-2xl p-6 bg-white/5 backdrop-blur-xl"
+            className="border border-ink/10 rounded-2xl p-6 bg-ink/5 backdrop-blur-xl"
           >
-            <h3 className="text-sm font-semibold text-blue-300 uppercase tracking-wide mb-4">
+            <h3 className="text-sm font-semibold text-blue-600 dark:text-blue-300 uppercase tracking-wide mb-4">
               {group.label}
             </h3>
             <div className="flex flex-wrap gap-2">
@@ -82,8 +82,8 @@ export default function Skills() {
                   key={item.name}
                   className={
                     item.verified
-                      ? "text-xs text-white/80 bg-blue-500/15 border border-blue-400/30 px-3 py-1 rounded-full"
-                      : "text-xs text-white/50 bg-white/5 border border-white/10 px-3 py-1 rounded-full"
+                      ? "text-xs text-ink/80 bg-blue-600/10 dark:bg-blue-500/15 border border-blue-600/30 dark:border-blue-400/30 px-3 py-1 rounded-full"
+                      : "text-xs text-ink/50 bg-ink/5 border border-ink/10 px-3 py-1 rounded-full"
                   }
                 >
                   {item.name}

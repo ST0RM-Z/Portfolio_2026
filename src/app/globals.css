@@ -1,1 +1,26 @@
 @import "tailwindcss";
+
+@custom-variant dark (&:where(.dark, .dark *));
+
+:root {
+  --background: #f8fafc;
+  --ink: #0f172a;
+}
+
+.dark {
+  --background: #020617;
+  --ink: #ffffff;
+}
+
+@theme inline {
+  --color-background: var(--background);
+  --color-ink: var(--ink);
+}
+
+html {
+  color-scheme: light dark;
+}
+
+body {
+  transition: background-color 0.2s ease, color 0.2s ease;
+}

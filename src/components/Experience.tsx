@@ -33,19 +33,19 @@ const JOBS = [
 export default function Experience() {
   return (
     <section id="experience" className="py-20 scroll-mt-20">
-      <h2 className="text-3xl font-bold text-white text-center mb-10">Experience</h2>
+      <h2 className="text-3xl font-bold text-ink text-center mb-10">Experience</h2>
       <div className="max-w-3xl mx-auto flex flex-col gap-6">
         {JOBS.map((job) => (
           <div
             key={`${job.role}-${job.company}`}
-            className="border border-white/10 rounded-2xl p-6 bg-white/5 backdrop-blur-xl"
+            className="border border-ink/10 rounded-2xl p-6 bg-ink/5 backdrop-blur-xl"
           >
             <div className="flex flex-col sm:flex-row sm:items-baseline sm:justify-between mb-3">
-              <h3 className="text-lg font-semibold text-white">{job.role}</h3>
-              <span className="text-sm text-white/40">{job.period}</span>
+              <h3 className="text-lg font-semibold text-ink">{job.role}</h3>
+              <span className="text-sm text-ink/40">{job.period}</span>
             </div>
-            <p className="text-sm text-blue-300 mb-4">{job.company}</p>
-            <ul className="list-disc list-inside text-white/60 text-sm space-y-2">
+            <p className="text-sm text-blue-600 dark:text-blue-300 mb-4">{job.company}</p>
+            <ul className="list-disc list-inside text-ink/60 text-sm space-y-2">
               {job.bullets.map((bullet) => (
                 <li key={bullet}>{bullet}</li>
               ))}
