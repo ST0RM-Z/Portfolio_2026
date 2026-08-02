@@ -1,7 +1,8 @@
 import { Octokit } from "octokit";
 
 const octokit = new Octokit({ auth: process.env.GITHUB_TOKEN });
-const FEATURED_REPOS = ["portfolio-st0rm", "mac-file-declutter"]; 
+const FEATURED_REPOS = ["portfolio-st0rm", "mac-file-declutter"];
+const EXCLUDED_REPOS = ["Portfolio_2026"];
 
 /**
  * Fetches and parses the README from GitHub to extract a clean description.
@@ -48,20 +49,22 @@ export async function getRepositories(username: string) {
 
     // Fetch READMEs for the top repos to keep API calls manageable
     const reposWithData = await Promise.all(
-      data.map(async (repo) => {
-        const readmeDesc = await getRepoReadme(username, repo.name);
-        
-        return {
-          id: repo.id,
-          title: repo.name,
-          // Use README content, fallback to repo description, or a default
-          description: readmeDesc || repo.description || "A high-performance project built with care.",
-          link: repo.html_url,
-          stars: repo.stargazers_count || 0,
-          forks: repo.forks_count || 0,
-          language: repo.language || "N/A",
-        };
-      })
+      data
+        .filter((repo) => !EXCLUDED_REPOS.includes(repo.name))
+        .map(async (repo) => {
+          const readmeDesc = await getRepoReadme(username, repo.name);
+
+          return {
+            id: repo.id,
+            title: repo.name,
+            // Use README content, fallback to repo description, or a default
+            description: readmeDesc || repo.description || "A high-performance project built with care.",
+            link: repo.html_url,
+            stars: repo.stargazers_count || 0,
+            forks: repo.forks_count || 0,
+            language: repo.language || "N/A",
+          };
+        })
     );
 
     // Apply sorting logic: Featured repos first, then by stars
