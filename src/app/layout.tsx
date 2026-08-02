@@ -1,9 +1,20 @@
-import "./globals.css"; // Ensure this import exists!
+import type { Metadata } from "next";
+import "./globals.css";
+
+export const metadata: Metadata = {
+  title: "Dhairya Arya | Full-Stack Developer & IT Operations Analyst",
+  description: "Portfolio of Dhairya Arya — full-stack developer and IT operations analyst, showcasing projects pulled live from GitHub.",
+  openGraph: {
+    title: "Dhairya Arya | Full-Stack Developer & IT Operations Analyst",
+    description: "Portfolio of Dhairya Arya — full-stack developer and IT operations analyst, showcasing projects pulled live from GitHub.",
+    type: "website",
+  },
+};
 
 export default function RootLayout({ children }: { children: React.ReactNode }) {
   return (
-    <html lang="en">
-      <body className="bg-slate-50">{children}</body>
+    <html lang="en" className="scroll-smooth">
+      <body className="bg-slate-950">{children}</body>
     </html>
   );
 }

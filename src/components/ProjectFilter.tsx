@@ -36,11 +36,10 @@ export default function ProjectFilter({ repos }: { repos: Repo[] }) {
     <div className="max-w-7xl mx-auto px-6 py-16">
       {/* Title & Toolbar: Now using gap-8 to match the grid's gap */}
       <div className="flex flex-col gap-8 mb-12">
-        {/* <h2 className="text-3xl font-bold text-white">Projects</h2> */}
-        
         <div className="flex flex-col md:flex-row gap-6 w-full">
           <input
             type="text"
+            aria-label="Search projects"
             placeholder="Search projects..."
             className="bg-white/5 border border-white/10 rounded-xl p-4 text-white flex-grow focus:outline-none focus:border-blue-500 transition-colors"
             onChange={(e) => {
@@ -50,6 +49,7 @@ export default function ProjectFilter({ repos }: { repos: Repo[] }) {
           />
           {/* Ensure dropdown has a consistent width or flex-basis */}
           <select
+            aria-label="Filter by language"
             className="bg-slate-900 border border-white/10 rounded-xl p-4 text-white md:w-58 focus:outline-none focus:border-blue-500"
             onChange={(e) => {
               setLanguage(e.target.value);
@@ -63,14 +63,21 @@ export default function ProjectFilter({ repos }: { repos: Repo[] }) {
         </div>
       </div>
 
-      {/* Grid: items-stretch keeps cards uniform, justify-items-center centers them */}
-      <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 items-stretch justify-items-center">
-        {currentProjects.map((repo) => (
-          <div key={repo.id} className="flex w-full max-w-sm">
-            <ProjectCard {...repo} />
-          </div>
-        ))}
-      </div>
+      {currentProjects.length === 0 ? (
+        <p className="text-center text-white/50 py-16">
+          {repos.length === 0
+            ? "No projects to show right now — check back soon."
+            : "No projects match your search."}
+        </p>
+      ) : (
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 items-stretch justify-items-center">
+          {currentProjects.map((repo) => (
+            <div key={repo.id} className="flex w-full max-w-sm">
+              <ProjectCard {...repo} />
+            </div>
+          ))}
+        </div>
+      )}
 
       {/* Pagination Controls */}
       {totalPages > 1 && (
