@@ -2,11 +2,11 @@ import type { Metadata } from "next";
 import "./globals.css";
 
 export const metadata: Metadata = {
-  title: "Dhairya Arya | Full-Stack Developer & IT Operations Analyst",
-  description: "Portfolio of Dhairya Arya — full-stack developer and IT operations analyst, showcasing projects pulled live from GitHub.",
+  title: "Dhairya Arya | Full-Stack Developer",
+  description: "Portfolio of Dhairya Arya — full-stack developer, showcasing projects pulled live from GitHub.",
   openGraph: {
-    title: "Dhairya Arya | Full-Stack Developer & IT Operations Analyst",
-    description: "Portfolio of Dhairya Arya — full-stack developer and IT operations analyst, showcasing projects pulled live from GitHub.",
+    title: "Dhairya Arya | Full-Stack Developer",
+    description: "Portfolio of Dhairya Arya — full-stack developer, showcasing projects pulled live from GitHub.",
     type: "website",
   },
 };
