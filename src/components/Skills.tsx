@@ -5,10 +5,10 @@ const SKILL_GROUPS: { label: string; items: Skill[] }[] = [
     label: "Languages",
     items: [
       { name: "JavaScript", verified: true },
-      { name: "TypeScript", verified: true },
       { name: "PHP", verified: true },
       { name: "C#", verified: true },
       { name: "Python", verified: true },
+      { name: "TypeScript" },
       { name: "Java" },
       { name: "C" },
       { name: "C++" },
