@@ -7,11 +7,11 @@ const SKILL_GROUPS: { label: string; items: Skill[] }[] = [
       { name: "JavaScript", verified: true },
       { name: "TypeScript", verified: true },
       { name: "PHP", verified: true },
+      { name: "C#", verified: true },
+      { name: "Python", verified: true },
       { name: "Java" },
       { name: "C" },
       { name: "C++" },
-      { name: "C#" },
-      { name: "Python" },
     ],
   },
   {
@@ -31,8 +31,8 @@ const SKILL_GROUPS: { label: string; items: Skill[] }[] = [
       { name: "Express.js", verified: true },
       { name: "GraphQL (Apollo)", verified: true },
       { name: "REST API", verified: true },
+      { name: "ASP.NET", verified: true },
       { name: "Django" },
-      { name: ".NET" },
     ],
   },
   {
@@ -48,6 +48,7 @@ const SKILL_GROUPS: { label: string; items: Skill[] }[] = [
     label: "Testing & Tools",
     items: [
       { name: "Git", verified: true },
+      { name: "Docker", verified: true },
       { name: "Selenium" },
       { name: "Jest" },
       { name: "Postman" },
@@ -64,7 +65,7 @@ export default function Skills() {
       <h2 className="text-3xl font-bold text-white text-center mb-2">Skills</h2>
       <p className="text-center text-white/40 text-sm mb-10">
         <span className="inline-block w-2 h-2 rounded-full bg-blue-400 mr-2 align-middle" />
-        Demonstrated in public repos — the rest is from coursework and professional experience
+        Demonstrated in my repos — the rest is from coursework and professional experience
       </p>
       <div className="max-w-4xl mx-auto grid grid-cols-1 sm:grid-cols-2 gap-6">
         {SKILL_GROUPS.map((group) => (
