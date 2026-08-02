@@ -8,7 +8,7 @@ export default function Contact() {
   return (
     <section id="contact" className="py-20 scroll-mt-20 text-center">
       <h2 className="text-3xl font-bold text-white mb-4">Contact</h2>
-      <p className="text-white/50 mb-10">Waterloo, ON — open to full-stack and IT operations roles.</p>
+      <p className="text-white/50 mb-10">Waterloo, ON — open to full-stack freelancing roles.</p>
       <div className="flex flex-col sm:flex-row justify-center gap-4 max-w-2xl mx-auto">
         {LINKS.map((link) => (
           <a
